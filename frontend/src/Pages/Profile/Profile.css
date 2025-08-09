@@ -1,0 +1,422 @@
+/* Modern Customer Profile - Scoped Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+.customer-profile-page{
+  height: 100vh;
+}
+.customer-profile-container {
+  max-width: 70%;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.customer-profile-header {
+  text-align: center;
+  margin-bottom: 40px;
+  
+}
+
+.customer-profile-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.customer-profile-subtitle {
+  font-size: 16px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.customer-profile-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.customer-profile-banner {
+  height: 250px;
+  background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.customer-profile-avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.customer-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image covers the area properly */
+}
+
+.customer-profile-welcome {
+  padding: 80px 50px 30px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.customer-profile-welcome-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.customer-profile-welcome-message {
+  font-size: 16px;
+  color: #666;
+}
+
+.customer-profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 50px;
+}
+
+.customer-profile-main {
+  flex: 2;
+  min-width: 300px;
+}
+
+.customer-profile-sidebar {
+  flex: 1;
+  min-width: 250px;
+  margin-left: 40px;
+}
+
+.customer-profile-section {
+  margin-bottom: 30px;
+}
+
+.customer-profile-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+.customer-profile-section-title svg {
+  margin-right: 10px;
+  color: #3a7bd5;
+}
+
+.customer-profile-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #eaeaea;
+}
+
+.customer-profile-item:last-child {
+  border-bottom: none;
+}
+
+.customer-profile-item-icon {
+  flex: 0 0 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #eef1f5, #e6e9f0);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  color: #3a7bd5;
+}
+
+.customer-profile-item-content {
+  flex: 1;
+}
+
+.customer-profile-item-label {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 3px;
+}
+
+.customer-profile-item-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.customer-profile-address {
+  background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.customer-profile-address-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.customer-profile-address-title svg {
+  margin-right: 8px;
+  color: #3a7bd5;
+}
+
+.customer-profile-address-content {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Updated styles for the stats cards */
+
+.customer-profile-stats {
+  display: grid;
+  grid-template-columns: 1fr;  /* Changed from repeat(3, 1fr) to 1fr for full width cards */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.customer-profile-stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  min-width: 100%;  /* Ensure cards take full width */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.customer-profile-stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.customer-profile-stat-icon {
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: transparent; /* Remove the background gradient */
+}
+
+.customer-profile-stat-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image fits properly */
+}
+
+.customer-profile-stat-content {
+  flex-grow: 1;  /* Let the content area grow */
+}
+
+.customer-profile-stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3a7bd5;
+  margin-bottom: 5px;
+}
+
+.customer-profile-stat-label {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Update responsive styles if needed */
+@media (min-width: 768px) {
+  /* For medium screens and up, we can use a horizontal layout */
+  .customer-profile-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .customer-profile-stat-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .customer-profile-stat-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+/* Skeleton Loading */
+.customer-profile-skeleton {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.customer-profile-skeleton-banner {
+  height: 180px;
+  background-color: #f0f0f0;
+  animation: pulse 1.5s infinite;
+}
+
+.customer-profile-skeleton-avatar {
+  position: absolute;
+  bottom: -60px;
+  left: 50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  animation: pulse 1.5s infinite;
+  border: 5px solid white;
+}
+
+.customer-profile-skeleton-welcome {
+  padding: 80px 50px 30px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.customer-profile-skeleton-heading {
+  height: 30px;
+  width: 200px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+.customer-profile-skeleton-text {
+  height: 18px;
+  width: 150px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+.customer-profile-skeleton-content {
+  padding: 30px 50px;
+}
+
+.customer-profile-skeleton-section {
+  margin-bottom: 30px;
+}
+
+.customer-profile-skeleton-section-title {
+  height: 24px;
+  width: 150px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.customer-profile-skeleton-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.customer-profile-skeleton-item-icon {
+  flex: 0 0 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin-right: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+.customer-profile-skeleton-item-content {
+  flex: 1;
+}
+
+.customer-profile-skeleton-item-label {
+  height: 14px;
+  width: 80px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+.customer-profile-skeleton-item-value {
+  height: 18px;
+  width: 120px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 920px) {
+  .customer-profile-content {
+    flex-direction: column;
+  }
+  
+  .customer-profile-sidebar {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .customer-profile-avatar {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .customer-profile-welcome {
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  .customer-profile-content, 
+  .customer-profile-welcome {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .customer-profile-stats {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

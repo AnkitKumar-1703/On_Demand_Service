@@ -1,0 +1,186 @@
+/* Modern Professional Sign In Page */
+.signin-tradesman-page {
+  min-height: 100vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.signin-tradesman-container {
+  width: 100%;
+  max-width: 420px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.signin-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.signin-card-header {
+  background: linear-gradient(135deg, #ff7043, #ff9800);
+  padding: 25px 30px;
+  text-align: center;
+  color: white;
+}
+
+.signin-card-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.signin-card-header p {
+  margin: 8px 0 0;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.signin-card-icon {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.signin-card-icon svg {
+  color: #ff7043;
+  font-size: 32px;
+}
+
+.signin-form {
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #f9fafc;
+}
+
+.form-control:focus {
+  border-color: #ff7043;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.1);
+  outline: none;
+}
+
+.form-icon {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  color: #aaa;
+}
+
+.submit-button {
+  width: 100%;
+  background: linear-gradient(135deg, #ff7043, #ff9800);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 112, 67, 0.3);
+}
+
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.3);
+}
+
+.signin-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signin-footer a {
+  color: #ff7043;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.signin-footer a:hover {
+  color: #f4511e;
+  text-decoration: underline;
+}
+
+.forgot-password {
+  text-align: right;
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.signin-error {
+  animation: pulse 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .signin-card-header {
+    padding: 20px 15px;
+  }
+  
+  .signin-form {
+    padding: 20px 15px;
+  }
+  
+  .signin-card-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .signin-card-icon svg {
+    font-size: 26px;
+  }
+}

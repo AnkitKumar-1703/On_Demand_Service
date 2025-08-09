@@ -1,0 +1,102 @@
+/* Base container */
+
+.bug-report {
+  background-color: rgb(205, 229, 244);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+.bug-report__container {
+  background-color:rgb(255, 255, 255);
+  width: 50vw;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+
+.bug-report__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin: 1rem;
+}
+
+.bug-report__subtitle {
+  font-size: 1rem;
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+/* Form layout */
+.bug-report__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bug-report__form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.bug-report__label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Inputs */
+.bug-report__input,
+.bug-report__textarea,
+.bug-report__select,
+.bug-report__file {
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f8fafc;
+  transition: border-color 0.3s ease;
+}
+
+.bug-report__input:focus,
+.bug-report__textarea:focus,
+.bug-report__select:focus {
+  border-color: #2563eb;
+  outline: none;
+  background-color: #fff;
+}
+
+.bug-report__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* File upload */
+.bug-report__file {
+  background-color: #fff;
+}
+
+/* Submit Button */
+.bug-report__submit {
+  padding: 0.9rem 1.2rem;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bug-report__submit:hover {
+  background-color: #1e40af;
+}
+
