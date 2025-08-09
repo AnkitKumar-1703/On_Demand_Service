@@ -75,11 +75,21 @@ Possible patterns:
 
 
 ## Screenshots / Demo
-Add screenshots or GIFs here.
-```
-/assets/screenshots/home.png
-/assets/screenshots/booking-flow.gif
-```
+
+### Landing Page
+![Landing Page](frontend/assets/screenshots/landing-page.jpg)
+
+### Multilingual Support
+![Multilingual Support](frontend/assets/screenshots/multilingual.jpg)
+
+### User Dashboard
+![User Dashboard](frontend/assets/screenshots/user-dashboard.jpg)
+
+### Worker Dashboard
+![Worker Dashboard](frontend/assets/screenshots/worker-dashboard.jpg)
+
+### Worker Services
+![Worker Services](frontend/assets/screenshots/worker-services.jpg)
 
 
 ## Project Structure
