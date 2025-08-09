@@ -30,27 +30,30 @@ A modern web platform that connects users with service providers (e.g., home mai
 - User registration & authentication (JWT / sessions)
 - Profile management (users & service providers)
 - Service catalog with categories & filtering
+- Search functionality (by location, service type, etc.)
+- Multi-language support, allowing users to experience the platform in their preferred language.
 - Real-time availability & booking workflow
 - Dynamic pricing (per hour / fixed / tiered)
-- Scheduling & calendar integration
+- Scheduling 
 - Order lifecycle: Requested → Accepted → In Progress → Completed / Cancelled
 - In-app notifications (web sockets / polling)
 - Ratings & reviews system
-- Secure payments integration (Stripe / Razorpay placeholder)
 - Admin dashboard (manage users, providers, services, reports)
 - Mobile-responsive UI & accessible components
-- SEO-friendly metadata (if SSR / Next.js used)
 - Deployment on Vercel (preview & production)
 
 ## Architecture Overview
-> Adjust this section to reflect the actual stack once finalized.
 
 ```
-( Client )  -->  REST / GraphQL  -->  ( Backend API )  -->  Database (SQL / NoSQL)
-                    |                             
-                    └--> Realtime Layer (WebSockets / Pusher / Socket.io)
-                    └--> Payment Gateway (Stripe, etc.)
+( Client )  -->  REST API  -->  ( Backend API )  -->  Database (Prisma)
+                   |                             
+                   └--> Realtime Layer (Socket.io)
 ```
+
+- **Client**: React application built with Vite
+- **Backend API**: Express.js server handling API requests
+- **Database**: SQL database accessed via Prisma ORM
+- **Realtime**: Socket.io for real-time communication
 
 Possible patterns:
 - Monorepo or separated `client` and `server`
@@ -58,18 +61,18 @@ Possible patterns:
 - External services: Email (SendGrid), Queue (Bull / Redis), File storage (S3 / Cloudinary)
 
 ## Tech Stack
-(Replace with actual tools in use.)
 
 | Layer | Suggested / Placeholder |
 |-------|--------------------------|
-| Frontend | React / Next.js / Tailwind CSS |
-| Backend | Node.js (Express / NestJS) |
-| Database | MongoDB / PostgreSQL |
-| Realtime | Socket.io / Pusher |
-| Auth | JWT / OAuth 2.0 |
-| Payments | Stripe / Razorpay |
-| Deployment | Vercel (frontend) / Render / Railway (backend) |
-| Testing | Jest / React Testing Library / Supertest |
+| Frontend | React / Tailwind CSS |
+| Backend | Node.js (Express ) |
+| Database | MongoDB  |
+| Realtime | Socket.io  |
+| Auth | JWT  |
+| ORM | Prisma (if using SQL) / Mongoose (if using MongoDB) |
+| Language | i18Next |
+| Deployment | Vercel (frontend) / Render  (backend) |
+
 
 ## Screenshots / Demo
 Add screenshots or GIFs here.
@@ -77,10 +80,10 @@ Add screenshots or GIFs here.
 /assets/screenshots/home.png
 /assets/screenshots/booking-flow.gif
 ```
-If you have a Loom / YouTube walkthrough, link it here.
+
 
 ## Project Structure
-> Placeholder – update after finalizing repository layout.
+
 ```
 root/
   client/             # Frontend application
@@ -96,8 +99,8 @@ root/
 ### Prerequisites
 - Node.js (LTS recommended)
 - Package manager: npm / pnpm / yarn
-- (Optional) Docker & Docker Compose
-- (Optional) MongoDB / PostgreSQL instance
+- Database: MongoDB / PostgreSQL (or other SQL)
+
 
 ### Clone the Repository
 ```
@@ -153,7 +156,7 @@ npm start
 docker compose up --build
 ```
 
-## API (If Applicable)
+## API 
 Example REST endpoints:
 ```
 GET    /api/services
@@ -162,7 +165,7 @@ GET    /api/bookings/:id
 POST   /api/auth/login
 POST   /api/reviews
 ```
-Add full OpenAPI / Swagger spec if available.
+
 
 ## Testing
 ```
