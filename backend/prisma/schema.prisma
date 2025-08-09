@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  firstName   String
+  lastName    String
+  dob         DateTime
+  phoneNumber String     @unique
+  email       String     @unique
+  photoLink   String?
+  gender      String
+  password    String
+  addressId   String     @db.ObjectId
+  address     Address    @relation(fields: [addressId], references: [id])
+  orders      Order[]    @relation("CustomerOrders")
+  feedbacks   Feedback[] @relation("CustomerFeedbacks")
+
+  // Many-to-many relation: A customer can have multiple favorite providers
+  favorites   Favorite[]
+}
+
+model Provider {
+  id           String     @id @default(auto()) @map("_id") @db.ObjectId
+  firstName    String
+  lastName     String
+  dob          DateTime
+  phoneNumber  String     @unique
+  email        String     @unique
+  photoLink    String?
+  gender       String
+  password     String
+  addressId    String     @db.ObjectId
+  address      Address    @relation(fields: [addressId], references: [id])
+  available    Boolean    @default(true)
+  workType     String
+  aadharNumber String     @unique
+  orders       Order[]    @relation("ProviderOrders")
+  feedbacks    Feedback[] @relation("ProviderFeedbacks")
+
+  // Many-to-many relation: A provider can be favorited by multiple customers
+  favoritedBy  Favorite[]
+}
+
+// Junction table for many-to-many relation between Customer and Provider
+model Favorite {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  customerId  String    @db.ObjectId
+  providerId  String    @db.ObjectId
+  customer    Customer  @relation(fields: [customerId], references: [id])
+  provider    Provider  @relation(fields: [providerId], references: [id])
+  createdAt   DateTime  @default(now()) // Timestamp for when the provider was favorited
+}
+
+
+model Order {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  taskName    String
+  description String?
+  state       OrderState @default(AVAILABLE)
+  doneBy      Provider   @relation("ProviderOrders", fields: [doneById], references: [id])
+  doneById    String     @db.ObjectId
+  askedBy     Customer   @relation("CustomerOrders", fields: [askedById], references: [id])
+  askedById   String     @db.ObjectId
+  completed   Boolean    @default(false)
+   chat        Chat?      @relation 
+  feedback    Feedback?  @relation // Optional side of the relation
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Feedback {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  star      Int
+  feedback  String?
+  givenBy   Customer @relation("CustomerFeedbacks", fields: [givenById], references: [id])
+  givenById String   @db.ObjectId
+  givenTo   Provider @relation("ProviderFeedbacks", fields: [givenToId], references: [id])
+  givenToId String   @db.ObjectId
+  orderId   String   @unique @db.ObjectId
+  order     Order    @relation(fields: [orderId], references: [id]) // The required side of the relation
+  createdAt DateTime @default(now())
+}
+
+model Address {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  houseNumber String
+  streetName  String
+  state       String
+  country     String
+  pincode     String
+  longitude   Float
+  latitude    Float
+  customers   Customer[]
+  providers   Provider[]
+}
+
+enum OrderState {
+  AVAILABLE
+  PENDING
+  COMPLETED
+  REJECTED
+}
+
+model Chat {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  task      Order    @relation(fields: [taskId], references: [id])
+  taskId    String   @unique @db.ObjectId
+  messages  Json     // Array of message objects
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
