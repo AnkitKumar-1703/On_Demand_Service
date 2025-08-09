@@ -25,7 +25,7 @@ const Favorites = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/customer/auth/favoriteprovider",
+      url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/favoriteprovider`,
       headers: {
         Authorization: `bearer ${localStorage.getItem("customerToken")}`,
       },
@@ -58,7 +58,7 @@ const Favorites = () => {
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/customer/auth/favoriteprovider",
+      url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/favoriteprovider`,
       headers: {
         Authorization: "bearer " + localStorage.getItem("customerToken"),
         "Content-Type": "application/json",

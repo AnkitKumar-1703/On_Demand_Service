@@ -61,7 +61,7 @@ const CustomerProfile = () => {
                 let config = {
                         method: 'get',
                         maxBodyLength: Infinity,
-                        url: 'http://localhost:5000/customer/auth/profile',
+                        url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/profile`,
                         headers: {
                                 "Authorization": `bearer ${localStorage.getItem('customerToken')}`
                         }

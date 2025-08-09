@@ -79,7 +79,7 @@ const SignUpCustomer = () => {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:5000/customer/signup',
+      url: `${import.meta.env.VITE_APP_BACKEND}/customer/signup`,
       headers: { 
         'Content-Type': 'application/json'
       },

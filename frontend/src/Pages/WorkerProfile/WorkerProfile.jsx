@@ -36,7 +36,7 @@ const {t}=useTranslation();
       let config = {
         method: "get",
         maxBodyLength: Infinity,
-        url: "http://localhost:5000/provider/auth/profile",
+        url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/profile`,
         headers: {
           Authorization: `bearer ${localStorage.getItem("providerToken")}`,
         },
@@ -116,7 +116,7 @@ const {t}=useTranslation();
     let config = {
       method: "patch",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/provider/auth/updateProfile",
+      url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/updateProfile`,
       headers: {
         Authorization: "bearer " + localStorage.getItem("providerToken"),
         "Content-Type": "application/json",

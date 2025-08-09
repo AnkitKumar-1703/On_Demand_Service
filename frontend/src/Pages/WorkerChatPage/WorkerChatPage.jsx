@@ -6,7 +6,7 @@ import axios from "axios";
 import { useLocation, useNavigate } from 'react-router-dom';
 import './WorkerChatPage.css';
 
-const socket = io('http://localhost:5000');
+const socket = io(`${import.meta.env.VITE_APP_BACKEND}`);
 
 const WorkerChatPage = () => {
   const [messages, setMessages] = useState([]);
@@ -20,8 +20,8 @@ const WorkerChatPage = () => {
    async function fetchMessages() {
       try {
         console.log(taskId);
-        console.log(`http://localhost:5000/chat/${taskId}`);
-        const response = await axios.get(`http://localhost:5000/chat/${taskId}`);
+        console.log(`${import.meta.env.VITE_APP_BACKEND}/chat/${taskId}`);
+        const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND}/chat/${taskId}`);
          console.log(response?.data?.chat?.messages);
         setMessages(response?.data?.chat?.messages);
       }
@@ -61,7 +61,7 @@ let data = JSON.stringify({
 let config = {
   method: 'post',
   maxBodyLength: Infinity,
-  url: 'http://localhost:5000/chat',
+  url: `${import.meta.env.VITE_APP_BACKEND}/chat`,
   headers: { 
     'Content-Type': 'application/json'
   },

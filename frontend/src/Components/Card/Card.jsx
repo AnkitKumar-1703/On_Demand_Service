@@ -69,7 +69,7 @@ const Input = ({setOpen,providerId,name}) => {
           let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:5000/customer/auth/createOrder',
+            url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/createOrder`,
             headers: { 
                 Authorization: `bearer ${localStorage.getItem("customerToken")}`, 
               'Content-Type': 'application/json'

@@ -43,7 +43,7 @@ const HistoryCard = ({
     const config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/customer/auth/deleteOrder",
+      url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/deleteOrder`,
       headers: {
         Authorization: "bearer " + localStorage.getItem("customerToken"),
         "Content-Type": "application/json",
@@ -212,7 +212,7 @@ const Feedback = ({
       let config = {
         method: "patch",
         maxBodyLength: Infinity,
-        url: "http://localhost:5000/customer/auth/markCompletedOrder",
+        url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/markCompletedOrder`,
         headers: {
           Authorization: "bearer " + localStorage.getItem("customerToken"),
           "Content-Type": "application/json",

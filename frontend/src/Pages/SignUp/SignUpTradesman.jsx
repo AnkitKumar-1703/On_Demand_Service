@@ -148,7 +148,7 @@ const SignUpTradesman = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/provider/signup",
+      url: `${import.meta.env.VITE_APP_BACKEND}/provider/signup`,
       data: data,
     };
 

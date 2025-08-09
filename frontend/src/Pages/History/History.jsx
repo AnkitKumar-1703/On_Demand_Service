@@ -33,7 +33,7 @@ const {t}=useTranslation();
     const fetchHistory = async () => {
       try {
         const newData = JSON.stringify({ userId: localStorage.getItem("currentUser") });
-        const url = `http://localhost:5000/customer/auth/orderhistory`;
+        const url = `${import.meta.env.VITE_APP_BACKEND}/customer/auth/orderhistory`;
         const config = {
           method: "get",
           maxBodyLength: Infinity,

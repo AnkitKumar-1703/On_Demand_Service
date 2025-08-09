@@ -139,7 +139,7 @@ const UserDashboard = () => {
     e.preventDefault();
     console.log(filters);
     setLoading(true); // Set loading to true when applying filters
-    const url = `http://localhost:5000/customer/auth/filterprovider?workType=${filters.workType}&distance=${filters.distance}&rating=${filters.rating}`;
+    const url = `${import.meta.env.VITE_APP_BACKEND}/customer/auth/filterprovider?workType=${filters.workType}&distance=${filters.distance}&rating=${filters.rating}`;
     console.log(url);
 
     let config = {
@@ -194,7 +194,7 @@ const UserDashboard = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/customer/auth/bulkprovider",
+      url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/bulkprovider`,
       headers: {
         Authorization: `bearer ${localStorage.getItem("customerToken")}`,
       },
@@ -229,7 +229,7 @@ const UserDashboard = () => {
     let userconfig = {
       method: "get",
       maxBodyLength: Infinity,
-      url: 'http://localhost:5000/customer/auth/favoriteprovider',
+      url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/favoriteprovider`,
       headers: {
         Authorization: `bearer ${localStorage.getItem("customerToken")}`,
       },
@@ -430,7 +430,7 @@ const RightComponent = ({
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:5000/customer/auth/favoriteprovider',
+        url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/favoriteprovider`,
         headers: {
           'Authorization': 'bearer ' + localStorage.getItem('customerToken'),
           'Content-Type': 'application/json'

@@ -57,7 +57,7 @@ const SignInTradesman = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/provider/signin",
+      url: `${import.meta.env.VITE_APP_BACKEND}/provider/signin`,
       headers: {
         "Content-Type": "application/json",
       },

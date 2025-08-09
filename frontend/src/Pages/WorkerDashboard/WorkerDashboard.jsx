@@ -66,7 +66,7 @@ const WorkerDashboard = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `http://localhost:5000/provider/auth/${buttonName}`,
+      url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/${buttonName}`,
       headers: {
         Authorization: `bearer ${localStorage.getItem("providerToken")}`,
       },
@@ -106,7 +106,7 @@ const WorkerDashboard = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "http://localhost:5000/provider/auth/profile",
+      url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/profile`,
       headers: {
         Authorization: `bearer ${localStorage.getItem("providerToken")}`,
       },
@@ -215,7 +215,7 @@ const WorkerDashboard = () => {
                     let config = {
                       method: "patch",
                       maxBodyLength: Infinity,
-                      url: "http://localhost:5000/provider/auth/updateStatus",
+                      url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/updateStatus`,
                       headers: {
                         Authorization: `bearer ${localStorage.getItem(
                           "providerToken"
@@ -340,7 +340,7 @@ const WorkerDashboard = () => {
                       let config = {
                       method: "patch",
                       maxBodyLength: Infinity,
-                      url: "http://localhost:5000/provider/auth/completeOrder",
+                      url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/completeOrder`,
                       headers: {
                         Authorization:
                         "bearer " +
@@ -436,7 +436,7 @@ const WorkerDashboard = () => {
                           let config = {
                             method: "patch",
                             maxBodyLength: Infinity,
-                            url: "http://localhost:5000/provider/auth/acceptOrder",
+                            url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/acceptOrder`,
                             headers: {
                               Authorization:
                                 "bearer " +
@@ -486,7 +486,7 @@ const WorkerDashboard = () => {
                           let config = {
                             method: "patch",
                             maxBodyLength: Infinity,
-                            url: "http://localhost:5000/provider/auth/rejectOrder",
+                            url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/rejectOrder`,
                             headers: {
                               Authorization:
                                 "bearer " +
@@ -566,7 +566,7 @@ const WorkerDashboard = () => {
                             let config = {
                               method: "patch",
                               maxBodyLength: Infinity,
-                              url: "http://localhost:5000/provider/auth/redoOrder",
+                              url: `${import.meta.env.VITE_APP_BACKEND}/provider/auth/redoOrder`,
                               headers: {
                                 Authorization:
                                   "bearer " +

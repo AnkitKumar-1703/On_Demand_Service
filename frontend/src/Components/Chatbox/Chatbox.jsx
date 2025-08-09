@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import axios from "axios";
 import './Chatbox.css';
 
-const socket = io('http://localhost:5000');
+const socket = io(import.meta.env.VITE_APP_BACKEND);
 
 const ChatBox = ({ taskId }) => {
   const [messages, setMessages] = useState([]);
@@ -22,7 +22,7 @@ const ChatBox = ({ taskId }) => {
   useEffect(() => {
     async function fetchMessages() {
       try {
-        const response = await axios.get(`http://localhost:5000/chat/${taskId}`);
+        const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND}/chat/${taskId}`);
         console.log(response?.data?.chat?.messages);
         setMessages(response?.data?.chat?.messages || []);
       }
@@ -65,7 +65,7 @@ const ChatBox = ({ taskId }) => {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:5000/chat',
+        url: `${import.meta.env.VITE_APP_BACKEND}/chat`,
         headers: { 
           'Content-Type': 'application/json'
         },

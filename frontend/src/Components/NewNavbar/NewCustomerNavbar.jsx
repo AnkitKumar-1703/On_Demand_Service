@@ -107,7 +107,7 @@ export default function PrimarySearchAppBar({ setProviderData, fav, setLoading }
       let config = {
         method: "get",
         maxBodyLength: Infinity,
-        url: `http://localhost:5000/customer/auth/searchprovider?keyword=${keyword}&fav=${fav || false}`,
+        url: `${import.meta.env.VITE_APP_BACKEND}/customer/auth/searchprovider?keyword=${keyword}&fav=${fav || false}`,
         headers: {
           Authorization: `Bearer ${localStorage.getItem("customerToken")}`,
         },

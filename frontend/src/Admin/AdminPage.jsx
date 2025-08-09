@@ -36,7 +36,7 @@ function AdminPage() {
           let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: "http://localhost:5000/customer/auth/bulkcustomer",
+            url: import.meta.env.VITE_APP_BACKEND+"/customer/auth/bulkcustomer",
             headers: {
               Authorization: `bearer ${localStorage.getItem("customerToken")}`,
             },
@@ -65,7 +65,7 @@ function AdminPage() {
           let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: "http://localhost:5000/customer/auth/bulkprovider",
+            url: import.meta.env.VITE_APP_BACKEND+"/customer/auth/bulkprovider",
             headers: {
               Authorization: `bearer ${localStorage.getItem("customerToken")}`,
             },
@@ -103,7 +103,7 @@ function AdminPage() {
       }
 
       const response = await axios.delete(
-        `http://localhost:5000/customer/auth/deletecustomer/${customerId}`,
+        `${import.meta.env.VITE_APP_BACKEND}/customer/auth/deletecustomer/${customerId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`, // Changed from 'bearer' to 'Bearer'
@@ -151,7 +151,7 @@ function AdminPage() {
       }
 
       const response = await axios.delete(
-        `http://localhost:5000/provider/auth/deleteprovider/${providerId}`,
+        `${import.meta.env.VITE_APP_BACKEND}/provider/auth/deleteprovider/${providerId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`, // Changed from 'bearer' to 'Bearer'
