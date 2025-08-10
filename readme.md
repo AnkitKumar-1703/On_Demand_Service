@@ -150,7 +150,7 @@ Provide an `.env.example` file for contributors.
 ## Running the App
 ### Development
 ```
-# Frontend (if Next.js)
+# Frontend 
 npm run dev
 
 # Backend
@@ -160,10 +160,6 @@ npm run dev
 ```
 npm run build
 npm start
-```
-### With Docker (example)
-```
-docker compose up --build
 ```
 
 ## API 
@@ -184,7 +180,7 @@ npm run test:watch
 npm run lint
 npm run format
 ```
-Consider adding coverage reporting & CI workflow (GitHub Actions).
+
 
 ## Deployment
 - Frontend: Vercel (auto-deploy from main / PR previews)
