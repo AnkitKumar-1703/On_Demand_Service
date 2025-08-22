@@ -6,7 +6,7 @@
 
 A modern web platform that connects users with service providers (e.g., home maintenance, cleaning, repair, tutoring, etc.) on demand. This repository contains the source code for the client / server (depending on implementation) that powers booking, managing, and tracking services in real-time.
 
-> NOTE: This is an initial README draft. Feel free to adjust sections based on the actual architecture and code layout as the project evolves.
+
 
 ## Table of Contents
 - [Key Features](#key-features)
